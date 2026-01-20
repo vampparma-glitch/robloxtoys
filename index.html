@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>RDX Robux Experience</title>
+  <title>RDX Robux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -29,38 +29,38 @@
 <body>
 
 <header>
-  <h1>RDX Robux Experience</h1>
+  <h1>RDX Robux </h1>
 </header>
 
 <section class="hero">
-  <h2>Experience the Robux System</h2>
-  <p>Ambiente educacional e visual. Não é oficial.</p>
+  <h2>Robux System</h2>
+  <p>Roblox Toys.</p>
 </section>
 
 <div class="wrap">
 
   <!-- LOGIN SIMULADO -->
   <div class="card" id="loginCard">
-    <h3>Simulated Access</h3>
+    <h3> Access</h3>
 
-    <label>Email (simulação)</label>
+    <label>Email (Digitar..)</label>
     <input type="email" placeholder="example@email.com">
 
-    <label>Password (simulação)</label>
+    <label>Password (Digitar...)</label>
     <input type="password" placeholder="••••••••">
 
     <button onclick="openForm()">Continue</button>
 
     <div class="note">
-      🔒 **Simulação visual** — nada é salvo ou enviado<br>
-      ❗ Nunca use dados reais<br>
-      ℹ️ Não afiliado à Roblox Corporation
+      Toys Roblox — nada é salvo ou enviado<br>
+      <br>
+      Roblox Corporation
     </div>
   </div>
 
   <!-- FORMULÁRIO -->
   <div class="card hidden" id="formCard">
-    <h3>Robux Simulation</h3>
+    <h3>Robux</h3>
 
     <label>Roblox Username</label>
     <input id="user" placeholder="Player123">
@@ -73,21 +73,21 @@
       <option>4500 Robux</option>
     </select>
 
-    <button onclick="simulate()">Start Simulation</button>
+    <button onclick="simulate()">Start</button>
 
     <div class="result hidden" id="result"></div>
 
     <div class="note">
-      🪙 Robux apenas visual<br>
-      🔐 Nunca pedimos senha do Roblox
+      🪙 Robux Em torno de 5 Minutos<br>
+      Roblox
     </div>
   </div>
 
 </div>
 
 <footer>
-  © 2026 RDX Robux Experience<br>
-  This site is not affiliated with Roblox Corporation.
+  © 2026 RDX Robux <br>
+  This site is Roblox Corporation.
 </footer>
 
 <script>
@@ -102,7 +102,7 @@
     if(!u){alert('Enter a username');return}
     const r=document.getElementById('result');
     r.classList.remove('hidden');
-    r.innerHTML=`✅ Simulation complete!<br>${u} → ${a} (visual only)`;
+    r.innerHTML=`Complete!<br>${u} → ${a} (visual only)`;
   }
 </script>
 
